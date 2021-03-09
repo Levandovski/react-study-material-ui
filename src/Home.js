@@ -8,7 +8,7 @@ import {
     Typography
  } from '@material-ui/core';
 import MenuIcon from "@material-ui/icons/Menu";
-
+import AccountCircle from "@material-ui/icons/AccountCircle";
 const useStyles= makeStyles((theme) => ({
     root:{      
         height:'100vh',
@@ -32,7 +32,7 @@ function Home(){
         <MenuIcon />
         </IconButton>
         <div className={classes.grow} />
-        <Button variant="outlined" color="primary">Fazer Login</Button>
+        <Button    startIcon={<AccountCircle />} variant="outlined" color="primary">Fazer Login</Button>
         </Toolbar>
         </AppBar>
     </div>;
