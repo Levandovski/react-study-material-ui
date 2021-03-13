@@ -5,7 +5,13 @@ import {
     Toolbar, 
     Button,
     IconButton, 
-    Typography
+    Drawer,
+    List,
+    Typography,
+    Divider,
+    ListItem,
+    ListItemIcon,
+    ListItemText
  } from '@material-ui/core';
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -18,7 +24,16 @@ const useStyles= makeStyles((theme) => ({
         height:'100vh',
     },
     appBar:{
-        boxShadow:'none',   
+        boxShadow:'none',
+        zIndex: theme.zIndex.drawer + 1,   
+    },
+    drawer: {
+        width: 240,
+        flexShrink: 0,
+    },
+    drawerPaper:{
+        width:240,
+        borderRight:'none',
     },
     menuIcon:{
         paddingRight:theme.spacing(5),
@@ -32,6 +47,10 @@ const useStyles= makeStyles((theme) => ({
     },
     grow:{
         flexGrow:1,
+    },
+    listItemText:{
+        fontSize:14,
+        
     }
 }));
 
@@ -68,6 +87,29 @@ function Home(){
 
         </Toolbar>
         </AppBar>
+        <Drawer
+        className={classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor="left"
+      >
+        <div className={classes.toolbar} />
+        <Divider />
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+             { /*<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>*/}
+              <ListItemText primary={text}
+              classes={{
+                  primary:classes.listItemText,
+              }}/>
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+       </Drawer>
     </div>;
 }
 
