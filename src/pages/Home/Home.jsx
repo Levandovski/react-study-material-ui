@@ -54,7 +54,7 @@ const useStyles= makeStyles((theme) => ({
     }
 }));
 
-function Home(){
+export const Home = () => {
     
     const classes = useStyles();
 
@@ -113,4 +113,3 @@ function Home(){
     </div>;
 }
 
-export default Home;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core';
-import Home from './Home';
+import { BrowserRouter } from 'react-router-dom'; 
+import  {Router} from './router/Router';
 
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
  
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <BrowserRouter>
+        <Router/>
+      </BrowserRouter>
     </ThemeProvider>
    
   );
