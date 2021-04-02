@@ -59,11 +59,8 @@ export const Menu = () => {
 
   return (
     <>
-   {status}
     <Container>
-      <button onClick={mostrarMenu}>
-        clickar
-      </button>       
+      <MenuIcon onClick={mostrarMenu} />
     </Container>
     <List
       component="nav"
