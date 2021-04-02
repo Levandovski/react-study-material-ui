@@ -12,17 +12,29 @@ import SendIcon from '@material-ui/icons/Send';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
+import MenuIcon from '@material-ui/icons/Menu';
 import {Container} from './Style';
+import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
+      maxWidth: 0,
+      backgroundColor: theme.palette.background.paper,    
+      left: -500,
+      transitionDuration:'1s',    
+    },
+    root1: {
+      width: '100%',
       maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.background.paper,     
+      left: 0,   
+      transitionDuration:'0.4s',  
     },
     nested: {
       paddingLeft: theme.spacing(4),
     },
+    
   }));
   
 export const Menu = () => {
@@ -34,9 +46,24 @@ export const Menu = () => {
     setOpen(!open);
   };
 
+  const [status, setStatus] = useState('style1');
+
+  const mostrarMenu = () => {
+      
+     if(status==='style1'){
+        setStatus('style2');
+      }else{
+        setStatus('style1');
+      }
+  }
+
   return (
     <>
+   {status}
     <Container>
+      <button onClick={mostrarMenu}>
+        clickar
+      </button>       
     </Container>
     <List
       component="nav"
@@ -46,7 +73,7 @@ export const Menu = () => {
           Nested List Items
         </ListSubheader>
       }
-      className={classes.root}
+      className={status==='style1' ? classes.root : classes.root1}
     >
       <ListItem button>
         <ListItemIcon>
