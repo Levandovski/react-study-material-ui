@@ -13,7 +13,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 import MenuIcon from '@material-ui/icons/Menu';
-import {Body, Header, Footer} from './Style';
+import {Body, Header} from './Style';
 import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -102,9 +102,9 @@ export const Menu = () => {
             </ListItem>
           </List>
         </Collapse>
-      </List>
-      <Footer />
-    </Body>   
+      </List>      
+    </Body>
+
     </>
     );
 }

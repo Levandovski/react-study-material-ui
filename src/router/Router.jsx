@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 import {Home} from '../pages/Home/Home';
-import {Menu}  from '../pages/Menu/Menu';
+import {Menu}  from '../components/Menu';
 import {Login}  from '../pages/Login/Login';
 
 export const Router = () => {
