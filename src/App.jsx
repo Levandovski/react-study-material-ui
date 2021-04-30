@@ -15,10 +15,10 @@ function App() {
  
   return (
     <ThemeProvider theme={theme}>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Router/>
-      </BrowserRouter> */}
-      <Layout />
+      </BrowserRouter>
+      {/* <Layout /> */}
 
     </ThemeProvider>
    
